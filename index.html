@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sorry Koshnaa</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #ff6a88, #ff99ac);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(255, 0, 100, 0.6);
+        }
+
+        h1 {
+            font-size: 50px;
+            color: white;
+            animation: glow 2s infinite alternate;
+        }
+
+        p {
+            font-size: 20px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            background: #ff1744;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background: #d50000;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #ff4081; }
+            to { text-shadow: 0 0 20px #fff, 0 0 40px #ff1744; }
+        }
+
+        .heart {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>I'm Sorry Koshnaa</h1>
+    <p>
+        I never wanted to hurt you.  
+        It was my mistake and misunderstanding.  
+        You mean everything to me.  
+        Please forgive me maa
+    </p>
+    <button onclick="showLove()">Click if you forgive me</button>
+</div>
+
+<script>
+    function showLove() {
+        alert("Thank you for forgiving me,pondati I love you sooo much 😘");
+    }
+
+    // Floating hearts
+    setInterval(() => {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }, 300);
+</script>
+
+</body>
+</html>
